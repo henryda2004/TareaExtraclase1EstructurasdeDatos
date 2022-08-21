@@ -15,9 +15,9 @@ public class Student {
 	private final SimpleStringProperty notaproyecto1;
 	private final SimpleStringProperty notaproyecto2;
 	private final SimpleStringProperty notaproyecto3;
-	private final SimpleStringProperty promedioproyectos;
-	private final SimpleStringProperty promediotodo;
-	private final SimpleStringProperty notafinal;
+	private SimpleStringProperty promedioproyectos;
+	private SimpleStringProperty promediotodo;
+	private SimpleStringProperty notafinal;
 	
 	public Student(String carne, String nya, String correo, String numero, String nickname, String tipo,
 			String notapromedioexamenes, String notapromedioquices, String notapromediotareas, String notaproyecto1,
@@ -80,11 +80,20 @@ public class Student {
 	public String getPromedioproyectos() {
 		return promedioproyectos.get();
 	}
+	public void setPromedioproyectos(String value) {
+		promedioproyectos = new SimpleStringProperty(value);
+	}
 	public String getPromediotodo() {
 		return promediotodo.get();
 	}
+	public void setPromediotodo(String value) {
+		promediotodo = new SimpleStringProperty(value);
+	}
 	public String getNotafinal() {
 		return notafinal.get();
+	}
+	public void setNotafinal(String value) {
+		notafinal = new SimpleStringProperty(value);
 	}
 	
 }
