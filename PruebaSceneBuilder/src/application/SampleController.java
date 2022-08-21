@@ -14,6 +14,7 @@ import java.util.ResourceBundle;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -97,10 +98,7 @@ public class SampleController implements Initializable{
 		promedioproyectos.setCellValueFactory(new PropertyValueFactory<Student, String>("promedioproyectos"));
 		promediotodo.setCellValueFactory(new PropertyValueFactory<Student, String>("promediotodo"));
 		notafinal.setCellValueFactory(new PropertyValueFactory<Student, String>("notafinal"));
-		
-		
-		
-		
+			
 	}
 
 

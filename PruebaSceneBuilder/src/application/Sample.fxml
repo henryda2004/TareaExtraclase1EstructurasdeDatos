@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -11,27 +12,30 @@
          <top>
             <Button fx:id="button" mnemonicParsing="false" onAction="#LoadFile" prefHeight="45.0" prefWidth="141.0" text="Select file" BorderPane.alignment="CENTER" />
          </top>
-         <center>
-            <TableView fx:id="table" prefHeight="523.0" prefWidth="1242.0" BorderPane.alignment="CENTER">
+         <right>
+            <TableView fx:id="table" prefHeight="523.0" prefWidth="1849.0" BorderPane.alignment="CENTER">
               <columns>
                 <TableColumn fx:id="carne" prefWidth="75.0" text="Carné" />
-                <TableColumn fx:id="nya" prefWidth="75.0" text="Nombre y apellidos" />
-                  <TableColumn fx:id="correo" prefWidth="75.0" text="Correo" />
-                  <TableColumn fx:id="numero" prefWidth="75.0" text="Teléfono" />
-                  <TableColumn fx:id="nickname" prefWidth="75.0" text="Nickname" />
-                  <TableColumn fx:id="tipo" prefWidth="75.0" text="Tipo de estudiante" />
-                  <TableColumn fx:id="notapromedioexamenes" prefWidth="75.0" text="Nota promedio (exámenes)" />
-                  <TableColumn fx:id="notapromedioquices" prefWidth="75.0" text="Nota promedio (quices)" />
-                  <TableColumn fx:id="notapromediotareas" prefWidth="75.0" text="Nota promedio (tareas)" />
-                  <TableColumn fx:id="notaproyecto1" prefWidth="75.0" text="Nota Proyecto #1" />
-                  <TableColumn fx:id="notaproyecto2" prefWidth="75.0" text="Nota Proyecto #2" />
-                  <TableColumn fx:id="notaproyecto3" prefWidth="75.0" text="Nota Proyecto #3" />
-                  <TableColumn fx:id="promedioproyectos" prefWidth="75.0" text="Nota promedio (proyectos)" />
-                  <TableColumn fx:id="promediotodo" prefWidth="75.0" text="Nota promedio (exámenes, quices, tareas)" />
-                  <TableColumn fx:id="notafinal" prefWidth="75.0" text="Nota final" />
+                <TableColumn fx:id="nya" prefWidth="134.0" text="Nombre y apellidos" />
+                  <TableColumn fx:id="correo" prefWidth="139.0" text="Correo" />
+                  <TableColumn fx:id="numero" prefWidth="77.0" text="Teléfono" />
+                  <TableColumn fx:id="nickname" prefWidth="63.0" text="Nickname" />
+                  <TableColumn fx:id="tipo" prefWidth="36.0" text="Tipo" />
+                  <TableColumn fx:id="notapromedioexamenes" prefWidth="160.0" text="Nota promedio (exámenes)" />
+                  <TableColumn fx:id="notapromedioquices" prefWidth="149.0" text="Nota promedio (quices)" />
+                  <TableColumn fx:id="notapromediotareas" prefWidth="149.0" text="Nota promedio (tareas)" />
+                  <TableColumn fx:id="notaproyecto1" prefWidth="110.0" text="Nota Proyecto #1" />
+                  <TableColumn fx:id="notaproyecto2" prefWidth="113.0" text="Nota Proyecto #2" />
+                  <TableColumn fx:id="notaproyecto3" prefWidth="110.0" text="Nota Proyecto #3" />
+                  <TableColumn fx:id="promedioproyectos" prefWidth="169.0" text="Nota promedio (proyectos)" />
+                  <TableColumn fx:id="promediotodo" prefWidth="247.0" text="Nota promedio (exámenes, quices, tareas)" />
+                  <TableColumn fx:id="notafinal" minWidth="0.0" prefWidth="78.0" text="Nota final" />
               </columns>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
             </TableView>
-         </center>
+         </right>
       </BorderPane>
    </center>
 </BorderPane>
