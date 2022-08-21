@@ -1,6 +1,7 @@
 package application;
+import javafx.scene.control.Button;
 
-import java.awt.Button;
+//import java.awt.Button;
 import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
 import java.io.File;
@@ -12,32 +13,38 @@ import java.util.ResourceBundle;
 
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.FileChooser;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 public class SampleController implements Initializable{
 	
-	private Button button;
+	@FXML private Button button;
 	
-	private TableView<Student> table;
-	private TableColumn<Student, String> carne;
-	private TableColumn<Student, String> nya;
-	private TableColumn<Student, String> correo;
-	private TableColumn<Student, String> numero;
-	private TableColumn<Student, String> nickname;
-	private TableColumn<Student, String> tipo;
-	private TableColumn<Student, String> notapromedioexamenes;
-	private TableColumn<Student, String> notapromedioquices;
-	private TableColumn<Student, String> notapromediotareas;
-	private TableColumn<Student, String> notaproyecto1;
-	private TableColumn<Student, String> notaproyecto2;
-	private TableColumn<Student, String> notaproyecto3;
-
-	private TableColumn<Student, String> promedioproyectos;
-	private TableColumn<Student, String> promediotodo;
-	private TableColumn<Student, String> notafinal;
+	@FXML private TableView<Student> table;
+	@FXML private TableColumn<Student, String> carne;
+	@FXML private TableColumn<Student, String> nya;
+	@FXML private TableColumn<Student, String> correo;
+	@FXML private TableColumn<Student, String> numero;
+	@FXML private TableColumn<Student, String> nickname;
+	@FXML private TableColumn<Student, String> tipo;
+	@FXML private TableColumn<Student, String> notapromedioexamenes;
+	@FXML private TableColumn<Student, String> notapromedioquices;
+	@FXML private TableColumn<Student, String> notapromediotareas;
+	@FXML private TableColumn<Student, String> notaproyecto1;
+	@FXML private TableColumn<Student, String> notaproyecto2;
+	@FXML private TableColumn<Student, String> notaproyecto3;
+	@FXML private TableColumn<Student, String> promedioproyectos;
+	@FXML private TableColumn<Student, String> promediotodo;
+	@FXML private TableColumn<Student, String> notafinal;
 	
+	public ObservableList<Student> list = FXCollections.observableArrayList(
+			new Student ("2022756483", "Andr�s Chirinos P�rez", "felichi1503@gmail.com", "60597345", "AndresCh", "B", "39.2", "23.4", "0", "34.5", "100", "100", "0", "0", "0")
+			);
+	///
 	public void LoadFile() throws IOException {
 		FileChooser fc = new FileChooser();
 		File seletedFile = fc.showOpenDialog(null);
@@ -65,7 +72,25 @@ public class SampleController implements Initializable{
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
+		
+		carne.setCellValueFactory(new PropertyValueFactory<Student, String>("carne"));
+		nya.setCellValueFactory(new PropertyValueFactory<Student, String>("nya"));
+		correo.setCellValueFactory(new PropertyValueFactory<Student, String>("correo"));
+		numero.setCellValueFactory(new PropertyValueFactory<Student, String>("numero"));
+		nickname.setCellValueFactory(new PropertyValueFactory<Student, String>("nickname"));
+		tipo.setCellValueFactory(new PropertyValueFactory<Student, String>("tipo"));
+		notapromedioexamenes.setCellValueFactory(new PropertyValueFactory<Student, String>("notapromedioexamenes"));
+		notapromedioquices.setCellValueFactory(new PropertyValueFactory<Student, String>("notapromedioquices"));
+		notapromediotareas.setCellValueFactory(new PropertyValueFactory<Student, String>("notapromediotareas"));
+		notaproyecto1.setCellValueFactory(new PropertyValueFactory<Student, String>("notaproyecto1"));
+		notaproyecto2.setCellValueFactory(new PropertyValueFactory<Student, String>("notaproyecto2"));
+		notaproyecto3.setCellValueFactory(new PropertyValueFactory<Student, String>("notaproyecto3"));
+		promedioproyectos.setCellValueFactory(new PropertyValueFactory<Student, String>("promedioproyectos"));
+		promediotodo.setCellValueFactory(new PropertyValueFactory<Student, String>("promediotodo"));
+		notafinal.setCellValueFactory(new PropertyValueFactory<Student, String>("notafinal"));
+		
+		table.setItems(list);
+		
 		
 	}
 

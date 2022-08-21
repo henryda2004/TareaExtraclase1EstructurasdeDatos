@@ -1,5 +1,5 @@
 package application;
 
-public class StudentB extends Student{
-	
+public class StudentB {
+
 }

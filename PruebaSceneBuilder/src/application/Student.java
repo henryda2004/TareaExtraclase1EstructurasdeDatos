@@ -15,60 +15,76 @@ public class Student {
 	private final SimpleStringProperty notaproyecto1;
 	private final SimpleStringProperty notaproyecto2;
 	private final SimpleStringProperty notaproyecto3;
-	public Student(SimpleStringProperty carne, SimpleStringProperty nya, SimpleStringProperty correo,
-			SimpleStringProperty numero, SimpleStringProperty nickname, SimpleStringProperty tipo,
-			SimpleStringProperty notapromedioexamenes, SimpleStringProperty notapromedioquices,
-			SimpleStringProperty notapromediotareas, SimpleStringProperty notaproyecto1,
-			SimpleStringProperty notaproyecto2, SimpleStringProperty notaproyecto3) {
+	private final SimpleStringProperty promedioproyectos;
+	private final SimpleStringProperty promediotodo;
+	private final SimpleStringProperty notafinal;
+	
+	public Student(String carne, String nya, String correo, String numero, String nickname, String tipo,
+			String notapromedioexamenes, String notapromedioquices, String notapromediotareas, String notaproyecto1,
+			String notaproyecto2, String notaproyecto3, String promedioproyectos, String promediotodo,
+			String notafinal) {
 		super();
-		this.carne = carne;
-		this.nya = nya;
-		this.correo = correo;
-		this.numero = numero;
-		this.nickname = nickname;
-		this.tipo = tipo;
-		this.notapromedioexamenes = notapromedioexamenes;
-		this.notapromedioquices = notapromedioquices;
-		this.notapromediotareas = notapromediotareas;
-		this.notaproyecto1 = notaproyecto1;
-		this.notaproyecto2 = notaproyecto2;
-		this.notaproyecto3 = notaproyecto3;
+		this.carne = new SimpleStringProperty(carne);
+		this.nya = new SimpleStringProperty(nya);
+		this.correo = new SimpleStringProperty(correo);
+		this.numero = new SimpleStringProperty(numero);
+		this.nickname = new SimpleStringProperty(nickname);
+		this.tipo = new SimpleStringProperty(tipo);
+		this.notapromedioexamenes = new SimpleStringProperty(notapromedioexamenes);
+		this.notapromedioquices = new SimpleStringProperty(notapromedioquices);
+		this.notapromediotareas = new SimpleStringProperty(notapromediotareas);
+		this.notaproyecto1 = new SimpleStringProperty(notaproyecto1);
+		this.notaproyecto2 = new SimpleStringProperty(notaproyecto2);
+		this.notaproyecto3 = new SimpleStringProperty(notaproyecto3);
+		this.promedioproyectos = new SimpleStringProperty(promedioproyectos);
+		this.promediotodo = new SimpleStringProperty(promediotodo);
+		this.notafinal = new SimpleStringProperty(notafinal);
 	}
-	public SimpleStringProperty getCarne() {
-		return carne;
+	
+	public String getCarne() {
+		return carne.get();
 	}
-	public SimpleStringProperty getNya() {
-		return nya;
+	public String getNya() {
+		return nya.get();
 	}
-	public SimpleStringProperty getCorreo() {
-		return correo;
+	public String getCorreo() {
+		return correo.get();
 	}
-	public SimpleStringProperty getNumero() {
-		return numero;
+	public String getNumero() {
+		return numero.get();
 	}
-	public SimpleStringProperty getNickname() {
-		return nickname;
+	public String getNickname() {
+		return nickname.get();
 	}
-	public SimpleStringProperty getTipo() {
-		return tipo;
+	public String getTipo() {
+		return tipo.get();
 	}
-	public SimpleStringProperty getNotapromedioexamenes() {
-		return notapromedioexamenes;
+	public String getNotapromedioexamenes() {
+		return notapromedioexamenes.get();
 	}
-	public SimpleStringProperty getNotapromedioquices() {
-		return notapromedioquices;
+	public String getNotapromedioquices() {
+		return notapromedioquices.get();
 	}
-	public SimpleStringProperty getNotapromediotareas() {
-		return notapromediotareas;
+	public String getNotapromediotareas() {
+		return notapromediotareas.get();
 	}
-	public SimpleStringProperty getNotaproyecto1() {
-		return notaproyecto1;
+	public String getNotaproyecto1() {
+		return notaproyecto1.get();
 	}
-	public SimpleStringProperty getNotaproyecto2() {
-		return notaproyecto2;
+	public String getNotaproyecto2() {
+		return notaproyecto2.get();
 	}
-	public SimpleStringProperty getNotaproyecto3() {
-		return notaproyecto3;
+	public String getNotaproyecto3() {
+		return notaproyecto3.get();
 	}
-
+	public String getPromedioproyectos() {
+		return promedioproyectos.get();
+	}
+	public String getPromediotodo() {
+		return promediotodo.get();
+	}
+	public String getNotafinal() {
+		return notafinal.get();
+	}
+	
 }
