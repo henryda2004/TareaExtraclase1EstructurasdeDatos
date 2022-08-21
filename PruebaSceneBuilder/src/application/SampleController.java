@@ -56,13 +56,18 @@ public class SampleController implements Initializable{
 			String line = "";
 			try {
 				ObservableList<Student> list = FXCollections.observableArrayList();
-				//br.readLine();
+				br.readLine();
 				while ((line = br.readLine()) != null) {
 					String[] count = line.split(",");
-					System.out.println( count[0]+" ");
 					System.out.println( count[0]+" "+count[1]+" "+count[2]+" "+count[3]+" "+count[4]+" "+count[5]+" "+count[6]+" "+count[7]+" "+count[8]+" "+count[9]+" "+count[10]+" "+count[11]);
-					list.add(new Student (count[0], count[1], count[2], count[3], count[4], count[5], count[6], count[7], count[8], count[9], count[10], count[11], "0", "0", "0")
+					if ("A".equals(count[5]) ) {
+					list.add(new StudentA (count[0], count[1], count[2], count[3], count[4], count[6], count[7], count[8], count[9], count[10], count[11])
 							);
+					}
+					else {
+					list.add(new StudentB (count[0], count[1], count[2], count[3], count[4], count[6], count[7], count[8], count[9], count[10], count[11])
+							);
+					}
 					
 				}
 				table.setItems(list);
