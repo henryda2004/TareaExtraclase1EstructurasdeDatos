@@ -41,9 +41,7 @@ public class SampleController implements Initializable{
 	@FXML private TableColumn<Student, String> promediotodo;
 	@FXML private TableColumn<Student, String> notafinal;
 	
-	public ObservableList<Student> list = FXCollections.observableArrayList(
-			new Student ("2022756483", "Andr�s Chirinos P�rez", "felichi1503@gmail.com", "60597345", "AndresCh", "B", "39.2", "23.4", "0", "34.5", "100", "100", "0", "0", "0")
-			);
+
 	///
 	public void LoadFile() throws IOException {
 		FileChooser fc = new FileChooser();
@@ -57,11 +55,17 @@ public class SampleController implements Initializable{
 			BufferedReader br = new BufferedReader(new FileReader(csvFile));
 			String line = "";
 			try {
+				ObservableList<Student> list = FXCollections.observableArrayList();
+				//br.readLine();
 				while ((line = br.readLine()) != null) {
 					String[] count = line.split(",");
 					System.out.println( count[0]+" ");
 					System.out.println( count[0]+" "+count[1]+" "+count[2]+" "+count[3]+" "+count[4]+" "+count[5]+" "+count[6]+" "+count[7]+" "+count[8]+" "+count[9]+" "+count[10]+" "+count[11]);
+					list.add(new Student (count[0], count[1], count[2], count[3], count[4], count[5], count[6], count[7], count[8], count[9], count[10], count[11], "0", "0", "0")
+							);
+					
 				}
+				table.setItems(list);
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
@@ -89,7 +93,7 @@ public class SampleController implements Initializable{
 		promediotodo.setCellValueFactory(new PropertyValueFactory<Student, String>("promediotodo"));
 		notafinal.setCellValueFactory(new PropertyValueFactory<Student, String>("notafinal"));
 		
-		table.setItems(list);
+		
 		
 		
 	}
