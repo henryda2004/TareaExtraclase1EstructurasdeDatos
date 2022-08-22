@@ -21,6 +21,11 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
+/**
+ * La clase SampleController permite ejecutar la funcion de recibir un archivo CSV de la computadora del ususario asi como leerlo, procesarlo y añadir nuevos estudiantes. También permite a la tabla ser visible dentro de la aplicacion
+ * @author henry
+ * version 21/08/2022
+ */
 public class SampleController implements Initializable{
 	
 	@FXML private Button button;
@@ -43,8 +48,11 @@ public class SampleController implements Initializable{
 	@FXML private TableColumn<Student, String> notafinal;
 	
 
-	///
-	public void LoadFile() throws IOException {
+	/**
+	 * Este metodo permite cargar un archivo de la computadora del usuario, procesarlo, leerlo, y asignar parametros a clases para asi acomodarlos en la lista
+	 * @throws IOException
+	 */
+	public void LoadFile() throws IOException { //En este caso se ve evidenciado el concepto de metodo, donde se tiene una funcion que permite tanto al boton de la interfaz grafica recibir un archivo de la computadora, como al programa procesar este archivo mediante la lectura del mismo como una matriz.
 		FileChooser fc = new FileChooser();
 		File seletedFile = fc.showOpenDialog(null);
 		
@@ -60,10 +68,9 @@ public class SampleController implements Initializable{
 				br.readLine();
 				while ((line = br.readLine()) != null) {
 					String[] count = line.split(",");
-					System.out.println( count[0]+" "+count[1]+" "+count[2]+" "+count[3]+" "+count[4]+" "+count[5]+" "+count[6]+" "+count[7]+" "+count[8]+" "+count[9]+" "+count[10]+" "+count[11]);
 					if ("A".equals(count[5]) ) {
 					list.add(new StudentA (count[0], count[1], count[2], count[3], count[4], count[6], count[7], count[8], count[9], count[10], count[11])
-							);
+							);//En este lugar se pone en practica el concepto de instancia, donde luego de recibir la lectura de una fila del archivo CSV se crea un nuevo objeto estudiante para darle los atributos y ser incluido en la tableview.
 					}
 					else {
 					list.add(new StudentB (count[0], count[1], count[2], count[3], count[4], count[6], count[7], count[8], count[9], count[10], count[11])
@@ -81,6 +88,9 @@ public class SampleController implements Initializable{
 	}
 
 	@Override
+	/**
+	 * Este metodo permite iniciar los componetes de Scenebuilder (interfaz)
+	 */
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
 		carne.setCellValueFactory(new PropertyValueFactory<Student, String>("carne"));
